@@ -158,4 +158,44 @@ inline void ProDikdortgenCiz(Rectangle dikdortgen, Vector2 koken, float rotasyon
     DrawRectanglePro(dikdortgen, koken, rotasyon, renk);
 }
 
+inline void UcgenCiz(Vector2 v1, Vector2 v2, Vector2 v3, Color renk)
+{
+    DrawTriangle(v1, v2, v3, renk);
+}
+
+inline bool DikdortgenlerCarpisiyorMu(Rectangle dikdortgen1, Rectangle dikdortgen2)
+{
+    return CheckCollisionRecs(dikdortgen1, dikdortgen2);
+}
+
+inline bool DairelerCarpisiyorMu(Vector2 merkez1, float cap1, Vector2 merkez2, float cap2)
+{
+    return CheckCollisionCircles(merkez1, cap1, merkez2, cap2);
+}
+
+inline bool Daire_DikdortgenCarpisiyorMu(Vector2 merkez, float cap, Rectangle dikdortgen)
+{
+    return CheckCollisionCircleRec(merkez, cap, dikdortgen);
+}
+
+inline bool Nokta_DikdortgenCarpisiyorMu(Vector2 nokta, Rectangle dikdortgen)
+{
+    return CheckCollisionPointRec(nokta, dikdortgen);
+}
+
+inline Rectangle DikdortgenCarpisamasiniAl(Rectangle dikdortgen1, Rectangle dikdortgen2)
+{
+    return GetCollisionRec(dikdortgen1, dikdortgen2);
+}
+
+inline bool Nokta_CizgiCarpisiyorMu(Vector2 nokta, Vector2 p1, Vector2 p2, int esik)
+{
+    return CheckCollisionPointLine(nokta, p1, p2, esik);
+}
+
+inline bool CizgilerCarpisiyorMu(Vector2 baslangic1, Vector2 bitis1, Vector2 baslangic2, Vector2 bitis2, Vector2 *carpismaNoktasi)
+{
+    CheckCollisionLines(baslangic1, bitis1, baslangic2, bitis2, carpismaNoktasi);
+}
+
 #endif
