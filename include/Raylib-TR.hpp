@@ -1,3 +1,14 @@
+/*
+    Programmed by hypernova-developer
+    2026
+    Protected by GNU GPL v3.0 License
+
+    Wishing you a happy coding experience with Raylib-TR and success in your projects! If you have any questions or need assistance, feel free to ask. Happy coding!
+
+    "Built by a developer, for developers"
+    -hypernova-developer
+*/
+
 #pragma once
 
 #ifndef RAYLIB_TR_HPP
@@ -138,9 +149,9 @@ inline void DikdortgenCiz(int x, int y, int genislik, int yukseklik, Color renk)
     DrawRectangle(x, y, genislik, yukseklik, renk);
 }
 
-inline void HalkaCiz(Vector2 merkez, float icCap, float disCap, float baslangicAcisi, float bitisAcisi, int segmentler, Color renk)
+inline void HalkaCiz(Vector2 merkez, float icCap, float disCap, float baslangicAcisi, float bitisAcisi, int parcaSayisi, Color renk)
 {
-    DrawRing(merkez, icCap, disCap, baslangicAcisi, bitisAcisi, segmentler, renk);
+    DrawRing(merkez, icCap, disCap, baslangicAcisi, bitisAcisi, parcaSayisi, renk);
 }
 
 inline void ElipsCiz(int merkezX, int merkezY, float yatayCap, float dikeyCap, Color renk)
@@ -148,9 +159,9 @@ inline void ElipsCiz(int merkezX, int merkezY, float yatayCap, float dikeyCap, C
     DrawEllipse(merkezX, merkezY, yatayCap, dikeyCap, renk);
 }
 
-inline void YuvarlakKenarDikdortgenCiz(Rectangle dikdortgen, float yuvarlaklik, int segmentler, Color renk)
+inline void YuvarlakKenarDikdortgenCiz(Rectangle dikdortgen, float yuvarlaklik, int parcaSayisi, Color renk)
 {
-    DrawRectangleRounded(dikdortgen, yuvarlaklik, segmentler, renk);
+    DrawRectangleRounded(dikdortgen, yuvarlaklik, parcaSayisi, renk);
 }
 
 inline void ProDikdortgenCiz(Rectangle dikdortgen, Vector2 koken, float rotasyon, Color renk)
@@ -161,6 +172,31 @@ inline void ProDikdortgenCiz(Rectangle dikdortgen, Vector2 koken, float rotasyon
 inline void UcgenCiz(Vector2 v1, Vector2 v2, Vector2 v3, Color renk)
 {
     DrawTriangle(v1, v2, v3, renk);
+}
+
+inline void DaireDilimiCiz(Vector2 merkez, float cap, float baslangicAcisi, float bitisAcisi, int parcaSayisi, Color renk)
+{
+    DrawCircleSector(merkez, cap, baslangicAcisi, bitisAcisi, parcaSayisi, renk);
+}
+
+inline void DaireDilimiCizgileriCiz(Vector2 merkez, float cap, float baslangicAcisi, float bitisAcisi, int parcaSayisi, Color renk)
+{
+    DrawCircleSectorLines(merkez, cap, baslangicAcisi, bitisAcisi, parcaSayisi, renk);
+}
+
+inline void GradyenDaireCiz(int merkezX, int merkezY, float cap, Color icRenk, Color disRenk)
+{
+    DrawCircleGradient(merkezX, merkezY, cap, icRenk, disRenk);
+}
+
+inline void GradyenDikeyDikdortgenCiz(int x, int y, int genislik, int yukseklik, Color ustRenk, Color altRenk)
+{
+    DrawRectangleGradientV(x, y, genislik, yukseklik, ustRenk, altRenk);
+}
+
+inline void GradyenYatayDikdortgenCiz(int x, int y, int genislik, int yukseklik, Color solRenk, Color sagRenk)
+{
+    DrawRectangleGradientH(x, y, genislik, yukseklik, solRenk, sagRenk);
 }
 
 inline bool DikdortgenlerCarpisiyorMu(Rectangle dikdortgen1, Rectangle dikdortgen2)
@@ -271,6 +307,51 @@ inline void MousePozisyonunuAyarla(int x, int y)
 inline void MouseImleciniAyarla(int imlec)
 {
     SetMouseCursor(imlec);
+}
+
+inline Image ResimYukle(const char *dosyaAdi)
+{
+    return LoadImage(dosyaAdi);
+}
+
+inline Texture2D ResimdenDokuYukle(Image resim)
+{
+    return LoadTextureFromImage(resim);
+}
+
+inline void ResmiOnbellektenSil(Image resim)
+{
+    UnloadImage(resim);
+}
+
+inline void DokuyuOnbellektenSil(Texture2D doku)
+{
+    UnloadTexture(doku);
+}
+
+inline void DokuyuGuncelle(Texture2D doku, const void *pikseller)
+{
+    UpdateTexture(doku, pikseller);
+}
+
+inline void ResmiYenidenBoyutlandir(Image *resim, int yeniGenislik, int yeniYukseklik)
+{
+    ImageResize(resim, yeniGenislik, yeniYukseklik);
+}
+
+inline void ResmiDikeyCevir(Image *resim)
+{
+    ImageFlipVertical(resim);
+}
+
+inline void ResmiYatayCevir(Image *resim)
+{
+    ImageFlipHorizontal(resim);
+}
+
+inline void ResimRenkTonu(Image *resim, Color renk)
+{
+    ImageColorTint(resim, renk);
 }
 
 #endif
