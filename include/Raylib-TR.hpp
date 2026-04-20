@@ -5,7 +5,7 @@
 
     Wishing you a happy coding experience with Raylib-TR and success in your projects! If you have any questions or need assistance, feel free to ask. Happy coding!
 
-    "Built by a developer, for developers"
+    "Built by a developer, for developers."
     -hypernova-developer
 */
 
