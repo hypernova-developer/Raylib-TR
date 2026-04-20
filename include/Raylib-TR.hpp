@@ -238,4 +238,39 @@ inline bool FareButonuBirakildiMi(int buton)
     return IsMouseButtonReleased(buton);
 }
 
+inline bool MouseButonuYukaridaMi(int buton)
+{
+    IsMouseButtonUp(buton);
+}
+
+inline int FareninXDegeriniAl()
+{
+    return GetMouseX();
+}
+
+inline int FareninYDegeriniAl()
+{
+    return GetMouseY();
+}
+
+inline Vector2 FareninPozisyonunuAl()
+{
+    return GetMousePosition();
+}
+
+inline float FareTekerlegiHareketiniAl()
+{
+    return GetMouseWheelMove();
+}
+
+inline void MousePozisyonunuAyarla(int x, int y)
+{
+    SetMousePosition(x, y);
+}
+
+inline void MouseImleciniAyarla(int imlec)
+{
+    SetMouseCursor(imlec);
+}
+
 #endif
