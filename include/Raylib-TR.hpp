@@ -195,7 +195,47 @@ inline bool Nokta_CizgiCarpisiyorMu(Vector2 nokta, Vector2 p1, Vector2 p2, int e
 
 inline bool CizgilerCarpisiyorMu(Vector2 baslangic1, Vector2 bitis1, Vector2 baslangic2, Vector2 bitis2, Vector2 *carpismaNoktasi)
 {
-    CheckCollisionLines(baslangic1, bitis1, baslangic2, bitis2, carpismaNoktasi);
+    return CheckCollisionLines(baslangic1, bitis1, baslangic2, bitis2, carpismaNoktasi);
+}
+
+inline bool TusaBasilmisMi(int tus)
+{
+    return IsKeyPressed(tus);
+}
+
+inline bool TusaBasiliyorMu(int tus)
+{
+    return IsKeyDown(tus);
+}
+
+inline bool TusBirakildiMi(int tus)
+{
+    return IsKeyReleased(tus);
+}
+
+inline bool TusaBasilmiyorMu(int tus)
+{
+    return IsKeyUp(tus);
+}
+
+inline int BasilanTusuAl()
+{
+    return GetKeyPressed();
+}
+
+inline bool FareButonuBasilmisMi(int buton)
+{
+    return IsMouseButtonPressed(buton);
+}
+
+inline bool FareButonuBasiliMi(int buton)
+{
+    return IsMouseButtonDown(buton);
+}
+
+inline bool FareButonuBirakildiMi(int buton)
+{
+    return IsMouseButtonReleased(buton);
 }
 
 #endif
