@@ -276,7 +276,7 @@ inline bool FareButonuBirakildiMi(int buton)
 
 inline bool MouseButonuYukaridaMi(int buton)
 {
-    IsMouseButtonUp(buton);
+    return IsMouseButtonUp(buton);
 }
 
 inline int FareninXDegeriniAl()
