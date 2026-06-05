@@ -409,4 +409,29 @@ inline void SesiOnbellektenSil(Sound ses)
     UnloadSound(ses);
 }
 
+inline void SesDurdur(Sound ses)
+{
+    StopSound(ses);
+}
+
+inline void SesDuraklat(Sound ses)
+{
+    PauseSound(ses);
+}
+
+inline void SesiDevamEttir(Sound ses)
+{
+    ResumeSound(ses);
+}
+
+inline bool SesCaliniyorMu(Sound ses)
+{
+    return IsSoundPlaying(ses);
+}
+
+inline void SesSeviyesiniAyarla(Sound ses, float sesSeviyesi)
+{
+    SetSoundVolume(ses, sesSeviyesi);
+}
+
 #endif
