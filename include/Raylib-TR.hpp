@@ -434,4 +434,14 @@ inline void SesSeviyesiniAyarla(Sound ses, float sesSeviyesi)
     SetSoundVolume(ses, sesSeviyesi);
 }
 
+inline double ZamaniAl()
+{
+    return GetTime();
+}
+
+inline int BasilanKarakteriAl()
+{
+    return GetCharPressed();
+}
+
 #endif
