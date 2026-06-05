@@ -469,4 +469,29 @@ inline int RastgeleSayiUret(int min, int max)
     return GetRandomValue(min, max);
 }
 
+inline Vector2 MetinBoyutunuHesaplaPro(Font yaziTipi, const char *metin, float boyut, float bosluk)
+{
+    MeasureTextEx(yaziTipi, metin, boyut, bosluk);
+}
+
+inline int AnlikFPSAl()
+{
+    return GetFPS();
+}
+
+inline bool FareImleciEkrandaMi()
+{
+    return IsCursorOnScreen();
+}
+
+inline bool DosyaVarMi(const char *dosyaYolu)
+{
+    return FileExists(dosyaYolu);
+}
+
+inline bool KlasorVarMi(const char *klasorYolu)
+{
+    return DirectoryExists(klasorYolu);
+}
+
 #endif
