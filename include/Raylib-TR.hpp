@@ -384,4 +384,29 @@ inline void FPSiCiz(int x, int y)
     DrawFPS(x, y);
 }
 
+inline void SesCihaziniAc()
+{
+    InitAudioDevice();
+}
+
+inline void SesCihaziniKapat()
+{
+    CloseAudioDevice();
+}
+
+inline Sound SesYukle(const char *dosyaYolu)
+{
+    return LoadSound(dosyaYolu);
+}
+
+inline void SesCal(Sound ses)
+{
+    PlaySound(ses);
+}
+
+inline void SesiOnbellektenSil(Sound ses)
+{
+    UnloadSound(ses);
+}
+
 #endif
