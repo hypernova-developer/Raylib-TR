@@ -444,4 +444,29 @@ inline int BasilanKarakteriAl()
     return GetCharPressed();
 }
 
+inline int MetinGenisliginiHesapla(const char *metin, int boyut)
+{
+    return MeasureText(metin, boyut);
+}
+
+inline void FareImleciniGizle()
+{
+    HideCursor();
+}
+
+inline void FareImöleciniGoster()
+{
+    ShowCursor();
+}
+
+inline void DokuCizgisekFiltrele(Texture2D doku)
+{
+    SetTextureFilter(doku, TEXTURE_FILTER_BILINEAR);
+}
+
+inline int RastgeleSayiUret(int min, int max)
+{
+    return GetRandomValue(min, max);
+}
+
 #endif
