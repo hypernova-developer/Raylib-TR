@@ -454,12 +454,12 @@ inline void FareImleciniGizle()
     HideCursor();
 }
 
-inline void FareImöleciniGoster()
+inline void FareImleciniGoster()
 {
     ShowCursor();
 }
 
-inline void DokuCizgisekFiltrele(Texture2D doku)
+inline void DokuCizgiselFiltrele(Texture2D doku)
 {
     SetTextureFilter(doku, TEXTURE_FILTER_BILINEAR);
 }
@@ -471,7 +471,7 @@ inline int RastgeleSayiUret(int min, int max)
 
 inline Vector2 MetinBoyutunuHesaplaPro(Font yaziTipi, const char *metin, float boyut, float bosluk)
 {
-    MeasureTextEx(yaziTipi, metin, boyut, bosluk);
+    return MeasureTextEx(yaziTipi, metin, boyut, bosluk);
 }
 
 inline int AnlikFPSAl()
