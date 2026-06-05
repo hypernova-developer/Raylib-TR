@@ -354,4 +354,34 @@ inline void ResimRenkTonu(Image *resim, Color renk)
     ImageColorTint(resim, renk);
 }
 
+inline Texture2D DokuYukle(const char *dosyaYolu)
+{
+    return LoadTexture(dosyaYolu);
+}
+
+inline void DokuCiz(Texture2D doku, int pozisyonX, int pozisyonY, Color renk)
+{
+    DrawTexture(doku, pozisyonX, pozisyonY, renk);
+}
+
+inline void DokuVektorleCiz(Texture2D doku, Vector2 pozisyon, Color renk)
+{
+    DrawTextureV(doku, pozisyon, renk);
+}
+
+inline void DokuProCiz(Texture2D doku, Rectangle kaynakDikdortgen, Rectangle hedefDikdortgen, Vector2 koken, float rotasyon, Color renk)
+{
+    DrawTexturePro(doku, kaynakDikdortgen, hedefDikdortgen, koken, rotasyon, renk);
+}
+
+inline void MetinCiz(const char *metin, int x, int y, int boyut, Color renk)
+{
+    DrawText(metin, x, y, boyut, renk);
+}
+
+inline void FPSiCiz(int x, int y)
+{
+    DrawFPS(x, y);
+}
+
 #endif
