@@ -494,4 +494,9 @@ inline bool KlasorVarMi(const char *klasorYolu)
     return DirectoryExists(klasorYolu);
 }
 
+inline float LineerGecisYap(float baslangic, float bitis, float oran)
+{
+    return baslangic + oran * (bitis - baslangic);
+}
+
 #endif
