@@ -43,7 +43,6 @@ constexpr Color BOSLUK = BLANK;
 constexpr Color MACENTA = MAGENTA;
 constexpr Color RAYLIB_BEYAZI = RAYWHITE;
 
-
 inline void PencereOlustur(int genislik, int yukseklik, const char *baslik)
 {
     InitWindow(genislik, yukseklik, baslik);
